@@ -19,29 +19,29 @@ class People
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $_id;
+    protected $_id;
 
     /**
      *
      * @var string
      * @ORM\Column(type="string",length=60,nullable=true)
      */
-    private $_firstName;
+    protected $_firstName;
 
     /**
      *
      * @var string
      * @ORM\Column(type="string",length=60,nullable=true)
      */
-    private $_lastName;
+    protected $_lastName;
 
     /**
      *
      * @var string
      * @ORM\Column(type="string",length=60,nullable=true)
      */
-    private $_favoriteFood;
-    
+    protected $_favoriteFood;
+
 
     public function setId($id)
     {

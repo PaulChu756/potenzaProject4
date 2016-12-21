@@ -1,12 +1,12 @@
 <?php
 
-//zf configure db-adapter "adapter=PDO_MYSQL&dbname=[initDB]&host=[localhost]&username=[root]&password=[root]" -s development
+//zf configure db-adapter "adapter=PDO_MYSQL&dbname=[myDB]&host=[localhost]&username=[root]&password=[root]" -s development
 
 // Define variables.
 $host = "localhost";
 $user = "root";
 $password = "root";
-$database = "initDB";
+$database = "myDB";
 
 //Create connection
 $connection = mysqli_connect($host, $user, $password);
@@ -19,17 +19,19 @@ else{
 }
 
 // Drop database
-$dropDB = "DROP DATABASE initDB";
+/*
+$dropDB = "DROP DATABASE myDB";
 
 // Check drop database
 if($connection->query($dropDB) === TRUE){
-	 echo "Database initDB was successfully dropped \n";
+	 echo "Database myDB was successfully dropped \n";
 } else {
     echo "Error dropping database: \n" . $connection->error;
 }
+*/
 
-//Create Database called "initDB"
-$db = "CREATE DATABASE IF NOT EXISTS initDB";
+//Create Database called "myDB"
+$db = "CREATE DATABASE IF NOT EXISTS myDB";
 
 //Check Datebase
 if($connection->query($db) === TRUE){
@@ -40,6 +42,30 @@ if($connection->query($db) === TRUE){
 
 // Select Database
 $connection->select_db($database);
+
+// Drop Visits table;
+$dropVisitsTable = "DROP TABLE Visits";
+if($connection->query($dropVisitsTable) === TRUE){
+	 echo "Visits Table was successfully dropped \n";
+} else {
+    echo "Error dropping visits table: " . $connection->error . "\n";
+}
+
+// Drop People table;
+$dropPeopleTable = "DROP TABLE People";
+if($connection->query($dropPeopleTable) === TRUE){
+	 echo "People Table was successfully dropped \n";
+} else {
+    echo "Error dropping people table: " . $connection->error . "\n";
+}
+
+// Drop States table;
+$dropStatesTable = "DROP TABLE States";
+if($connection->query($dropStatesTable) === TRUE){
+	 echo "States Table was successfully dropped \n";
+} else {
+    echo "Error dropping states table: " . $connection->error . "\n";
+}
 
 //Create States Table
 $statesTable = "CREATE TABLE IF NOT EXISTS States

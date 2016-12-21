@@ -3,11 +3,11 @@
  * http://docs.doctrine-project.org/en/latest/tutorials/getting-started.html#entity-repositories
  */
 
-namespace Example\Entity;
+namespace People\Entity;
 
 use Doctrine\ORM\EntityRepository;
 
-class ExampleRepository extends EntityRepository
+class PeopleRepository extends EntityRepository
 {
 
 
