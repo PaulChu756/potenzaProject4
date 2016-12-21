@@ -1,18 +1,17 @@
 <?php
 
-namespace Example\Entity;
+namespace People\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 /**
  *
- * @ORM\Table(name="example_examples")
+ * @ORM\Table(name="People")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity(repositoryClass="ExampleRepository")
+ * @ORM\Entity(repositoryClass="PeopleRepository")
  * @author Paul Chu <paulchu756@gmail.com>
  */
-class Example
+class People
 {
-
     /**
      *
      * @var integer $id
@@ -20,35 +19,69 @@ class Example
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    private $_id;
 
     /**
      *
      * @var string
      * @ORM\Column(type="string",length=60,nullable=true)
      */
-    private $title;
-
-     /**
-     * @var datetime $created_at
-     *
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $created_at;
-
-     /**
-     * @var datetime $created_at
-     *
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $updated_at;
+    private $_firstName;
 
     /**
      *
-     * @var boolean
-     * @ORM\Column(type="boolean",length=1,nullable=true)
+     * @var string
+     * @ORM\Column(type="string",length=60,nullable=true)
      */
-    private $active;
+    private $_lastName;
+
+    /**
+     *
+     * @var string
+     * @ORM\Column(type="string",length=60,nullable=true)
+     */
+    private $_favoriteFood;
+    
+
+    public function setId($id)
+    {
+        $this->_id = (int) $id;
+        return $this;
+    }
+    public function getId()
+    {
+        return $this->_id;
+    }
+
+    public function setFirstName($firstName)
+    {
+        $this->_firstName = (string) $firstName;
+        return $this;
+    }
+    public function getFirstName()
+    {
+        return $this->_firstName;
+    }
+
+    public function setLastName($lastName)
+    {
+        $this->_lastName = (string) $lastName;
+        return $this;
+    }
+    public function getLastName()
+    {
+        return $this->_lastName;
+    }
+
+    public function setFavoriteFood($favoriteFood)
+    {
+        $this->_favoriteFood = (string) $favoriteFood;
+        return $this;
+    }
+    public function getFavoriteFood()
+    {
+        return $this->_favoriteFood;
+    }
 
      /**
      *
