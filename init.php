@@ -67,14 +67,6 @@ if($connection->query($dropStatesTable) === TRUE){
     echo "Error dropping states table: " . $connection->error . "\n";
 }
 
-//Create States Table
-$statesTable = "CREATE TABLE IF NOT EXISTS States
-(
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-stateabb varchar(2) NOT NULL,
-statename varchar(40) NOT NULL
-)";
-
 // Create People Table
 $peopleTable = "CREATE TABLE IF NOT EXISTS People
 (
@@ -82,6 +74,14 @@ id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 firstname varchar(40) NOT NULL,
 lastname varchar(40) NOT NULL,
 food varchar(40) NOT NULL
+)";
+
+//Create States Table
+$statesTable = "CREATE TABLE IF NOT EXISTS States
+(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+stateabb varchar(2) NOT NULL,
+statename varchar(40) NOT NULL
 )";
 
 // Create Visit Table

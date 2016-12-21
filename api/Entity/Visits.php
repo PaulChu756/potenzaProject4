@@ -1,16 +1,16 @@
 <?php
 
-namespace People\Entity;
+namespace Visits\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 /**
  *
- * @ORM\Table(name="People")
+ * @ORM\Table(name="Visits")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity(repositoryClass="PeopleRepository")
+ * @ORM\Entity(repositoryClass="VisitsRepository")
  * @author Paul Chu <paulchu756@gmail.com>
  */
-class People
+class Visits
 {
     /**
      *
@@ -24,23 +24,23 @@ class People
     /**
      *
      * @var string
-     * @ORM\Column(type="string",length=60,nullable=false)
+     * @ORM\Column(type="integer",length=60,nullable=true)
      */
-    protected $_firstName;
+    protected $_p_id;
 
     /**
      *
      * @var string
-     * @ORM\Column(type="string",length=60,nullable=false)
+     * @ORM\Column(type="integer",length=60,nullable=true)
      */
-    protected $_lastName;
+    protected $_s_id;
 
     /**
      *
      * @var string
-     * @ORM\Column(type="string",length=60,nullable=false)
+     * @ORM\Column(type="string",length=60,nullable=true)
      */
-    protected $_favoriteFood;
+    protected $_date_visited;
 
 public function __construct(array $options = null)
     {

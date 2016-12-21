@@ -1,16 +1,16 @@
 <?php
 
-namespace People\Entity;
+namespace States\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 /**
  *
- * @ORM\Table(name="People")
+ * @ORM\Table(name="States")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity(repositoryClass="PeopleRepository")
+ * @ORM\Entity(repositoryClass="StatesRepository")
  * @author Paul Chu <paulchu756@gmail.com>
  */
-class People
+class States
 {
     /**
      *
@@ -24,23 +24,16 @@ class People
     /**
      *
      * @var string
-     * @ORM\Column(type="string",length=60,nullable=false)
+     * @ORM\Column(type="string",length=60,nullable=true)
      */
-    protected $_firstName;
+    protected $_stateName;
 
     /**
      *
      * @var string
-     * @ORM\Column(type="string",length=60,nullable=false)
+     * @ORM\Column(type="string",length=3,nullable=true)
      */
-    protected $_lastName;
-
-    /**
-     *
-     * @var string
-     * @ORM\Column(type="string",length=60,nullable=false)
-     */
-    protected $_favoriteFood;
+    protected $_stateAbb;
 
 public function __construct(array $options = null)
     {
@@ -74,34 +67,24 @@ public function __construct(array $options = null)
         return $this->_id;
     }
 
-    public function setFirstName($firstName)
+    public function setStateName($stateName)
     {
-        $this->_firstName = (string) $firstName;
+        $this->_stateName = (string) $stateName;
         return $this;
     }
-    public function getFirstName()
+    public function getStateName()
     {
-        return $this->_firstName;
+        return $this->_stateName;
     }
 
-    public function setLastName($lastName)
+    public function getStateAbb($stateAbb)
     {
-        $this->_lastName = (string) $lastName;
+        $this->_stateAbb = (string) $stateAbb;
         return $this;
     }
-    public function getLastName()
+    public function setStateAbb()
     {
         return $this->_lastName;
-    }
-
-    public function setFavoriteFood($favoriteFood)
-    {
-        $this->_favoriteFood = (string) $favoriteFood;
-        return $this;
-    }
-    public function getFavoriteFood()
-    {
-        return $this->_favoriteFood;
     }
 
      /**
