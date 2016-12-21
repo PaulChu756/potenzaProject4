@@ -18,7 +18,7 @@
     </style>
     <link type="text/css" href="/css/smoothness/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
     <link href="/css/style.css" rel="stylesheet">
-    
+
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,7 +30,7 @@
 
     <? echo $this->headStyle(); ?>
     <? echo $this->headLink(); ?>
-    
+
   </head>
 
   <body>
@@ -47,7 +47,7 @@
                 <a class="navbar-brand" href="/"><?=\Ia\Config::get('title');?></a>
             </div>
             <div class="collapse navbar-collapse">
-                <?php echo $this->placeholder('nav') ?> 
+                <?php echo $this->placeholder('nav') ?>
                 <?php
                 if(!Zend_Registry::isRegistered('auth')):
                 ?>
@@ -57,7 +57,7 @@
                 </ul>
                 <?php
                 else:
-                $user = Zend_Registry::get('auth'); 
+                $user = Zend_Registry::get('auth');
                 ?>
                 <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -78,25 +78,25 @@
                                     if($acl->isAllowed($user->role,'settings_clear-cache')):
                                     ?>
                                     <li><a href="/settings/clear-cache">Clear Cache</a></li>
-                                    <?php 
+                                    <?php
                                     endif;
                                     if($acl->isAllowed($user->role,'log_index')):
                                     ?>
                                     <li><a href="/log/index">View Log</a></li>
-                                    <?php 
-                                    endif;                    
+                                    <?php
+                                    endif;
                                     if($acl->isAllowed($user->role,'user_password-reset')):
                                     ?>
                                     <li><a href="/user/password-reset">Reset Password</a></li>
-                                    <?php 
-                                    endif; 
+                                    <?php
+                                    endif;
                                     if($acl->isAllowed($user->role,'support_index')):
                                     ?>
                                     <li><a href="/support">Contact Support</a></li>
-                                    <?php 
-                                    endif; 
-                                endif; 
-                                ?>                  
+                                    <?php
+                                    endif;
+                                endif;
+                                ?>
                         </ul>
                 </li>
                 <li><a onclick="return confirm('Are you sure you want to log out?');" href="/user/logout"><i class="glyphicon glyphicon-white glyphicon-off"></i></a></li>
@@ -105,7 +105,7 @@
                 <?php endif; ?>
             </div><!--/.nav-collapse -->
         </div>
-    </div>    
+    </div>
 
     <div class="container">
 
@@ -161,8 +161,8 @@
                     <% _.each(this.model.models, function(item) { %> <option value="<%= item.attributes[item.primaryKey] %>"><%= item.attributes[item.stringIdentifier] %></option> <% }); %>
                   </select>
                 </div>
-            </div>     
-        </script> 
+            </div>
+        </script>
 
         <script type="text/template" id="ia-grid-perpage">
         <form method="post" action=""><label for="perPage">Per Page</label>
@@ -172,7 +172,7 @@
         <option value="50"<% if(itemCountPerPage==50){%> selected="selected"<% } %>>50</option>
         <option value="100"<% if(itemCountPerPage==100){%> selected="selected"<% } %>>100</option>
         </select></form>
-        </script>    
+        </script>
 
         <script type="text/template" id="ia-grid-page">
         <div class="pagination paginationControl pagination-left">
@@ -189,7 +189,7 @@
         <% } %>
         </ul>
         </div>
-        </script>                  
+        </script>
 
         <!-- Backbone Templates -->
 
@@ -216,16 +216,16 @@
     <script src="/js/jquery-1.7.2.js"></script>
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/jquery.cookie.js"></script>
-    <script src="/js/jquery-ui-1.8.18.custom.min.js"></script>    
+    <script src="/js/jquery-ui-1.8.18.custom.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/json2.js"></script>
     <script src="/js/underscore-1.3.1.js"></script>
-    <script src="/js/backbone-min.js"></script>     
-    <script src="/js/accordionize.js"></script>     
+    <script src="/js/backbone-min.js"></script>
+    <script src="/js/accordionize.js"></script>
     <script src="/js/ia.js"></script>
     <? echo $this->headScript(); ?>
     <?php if(APPLICATION_ENV!='production'): ?>
         <div class="env"><?=gethostname()?> : <?=APPLICATION_ENV?></div>
-    <?php endif; ?>    
+    <?php endif; ?>
   </body>
 </html>
