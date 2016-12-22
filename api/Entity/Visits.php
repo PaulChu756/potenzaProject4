@@ -24,23 +24,24 @@ class Visits
     /**
      *
      * @var string
-     * @ORM\Column(type="integer",length=60,nullable=true)
+     * @ORM\Column(name="p_id", type="integer", nullable=false)
      */
     protected $_p_id;
 
     /**
      *
      * @var string
-     * @ORM\Column(type="integer",length=60,nullable=true)
+     * @ORM\Column(name="s_id", type="integer", nullable=false)
      */
     protected $_s_id;
 
     /**
      *
      * @var string
-     * @ORM\Column(type="string",length=60,nullable=true)
+     * @ORM\Column(name="data_visited", type="string", length=60, nullable=false)
      */
     protected $_date_visited;
+
 
 public function __construct(array $options = null)
     {
@@ -74,34 +75,34 @@ public function __construct(array $options = null)
         return $this->_id;
     }
 
-    public function setFirstName($firstName)
+    public function setP_Id($p_id)
     {
-        $this->_firstName = (string) $firstName;
+        $this->_p_id = (int) $p_id;
         return $this;
     }
-    public function getFirstName()
+    public function getP_Id()
     {
-        return $this->_firstName;
+        return $this->_p_id;
     }
 
-    public function setLastName($lastName)
+    public function setS_Id($s_id)
     {
-        $this->_lastName = (string) $lastName;
+        $this->_s_id = (int) $s_id;
         return $this;
     }
-    public function getLastName()
+    public function GetS_Id()
     {
-        return $this->_lastName;
+        return $this->_s_id;
     }
 
-    public function setFavoriteFood($favoriteFood)
+    public function setDate_Visited($date_visited)
     {
-        $this->_favoriteFood = (string) $favoriteFood;
+        $this->_date_visited = (string) $date_visited;
         return $this;
     }
-    public function getFavoriteFood()
+    public function getDate_Visited()
     {
-        return $this->_favoriteFood;
+        return $this->_date_visited;
     }
 
      /**
