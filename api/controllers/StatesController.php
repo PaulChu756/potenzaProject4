@@ -5,9 +5,7 @@ class API_StatesController extends Zend_Controller_Action
   public function indexAction()
   {
       $statesMapper = new API_Model_StatesMapper();
-      //$this->view->entries = $statesMapper->fetchAll();
-      require_once "States";
-      $state = new States;
+      $this->view->entries = $statesMapper->fetchAll();
   }
 
   public function getAction()
