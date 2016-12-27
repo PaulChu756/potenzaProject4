@@ -2,6 +2,7 @@
 
 class API_Model_VisitsMapper
 {
+    /*
     protected $_dbTable;
     
     public function setDbTable($dbTable)
@@ -26,6 +27,7 @@ class API_Model_VisitsMapper
         }
         return $this->_dbTable;
     }
+    */
 
     public function save(API_Model_Visits $visits)
     {

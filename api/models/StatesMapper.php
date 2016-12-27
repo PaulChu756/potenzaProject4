@@ -2,6 +2,7 @@
 
 class API_Model_StatesMapper
 {
+    /*
     protected $_dbTable;
     
     public function setDbTable($dbTable)
@@ -26,6 +27,7 @@ class API_Model_StatesMapper
         }
         return $this->_dbTable;
     }
+    */
 
     public function save(API_Model_States $states)
     {
