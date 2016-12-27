@@ -1,6 +1,9 @@
 <?php
 
-class API_IndexController extends Zend_Controller_Action
+use Doctrine\ORM;
+use API\Entity;
+
+class API_IndexController extends Ia_Controller_Action_Abstract
 {
 
     public function init()
