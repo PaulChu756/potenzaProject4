@@ -1,13 +1,18 @@
 <?php
 
-class API_PeopleController extends Zend_Controller_Action
+use Doctrine\ORM\EntityManager;
+use API\Entity;
+
+class API_PeopleController extends Ia_Controller_Action_Abstract
 {
   public function indexAction()
   {
       if($this->getRequest()->isGet())
       {
-        $peopleMapper = new API_Model_PeopleMapper();
-        $this->view->entries = $peopleMapper->fetchAll();
+        $peopleRepository = $entityManager->getRepository('People');
+        $people = $peopleRepository->findAll();
+        //$peopleMapper = new API_Model_PeopleMapper();
+        //$this->view->entries = $peopleMapper->fetchAll();
       }
       else if($this->getRequest()->isPost())
       {
