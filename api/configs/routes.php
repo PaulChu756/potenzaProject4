@@ -1,22 +1,24 @@
 <?php
 
 // just route api to web application homepage
+/*
 $apiRoute = new Zend_Controller_Router_Route(
     'api',
     array(
-        'modules'        => 'API',
+        'modules'        => 'api',
         'controller'    => 'index',
         'action'        => 'index'
     )
 );
 $router->addRoute('api', $apiRoute);
+*/
 
 
 //get all people
 $peopleRoute = new Zend_Controller_Router_Route(
     'api/people',
     array(
-        'modules'        => 'API',
+        'modules'        => 'api',
         'controller'    => 'people',
         'action'        => 'index'
     )
@@ -27,7 +29,7 @@ $router->addRoute('people', $peopleRoute);
 $personRoute = new Zend_Controller_Router_Route(
     'api/people/:peopleId',
     array(
-        'modules'        => 'API',
+        'modules'        => 'api',
         'controller'    => 'people',
         'action'        => 'get'
     )
@@ -39,7 +41,7 @@ $router->addRoute('peopleId', $personRoute);
 $statesRoute = new Zend_Controller_Router_Route(
     'api/states',
     array(
-        'modules'        => 'API',
+        'modules'        => 'api',
         'controller'    => 'states',
         'action'        => 'index'
     )
@@ -50,7 +52,7 @@ $router->addRoute('states', $statesRoute);
 $stateRoute = new Zend_Controller_Router_Route(
     'api/states/:stateId',
     array(
-        'modules'        => 'API',
+        'modules'        => 'api',
         'controller'    => 'states',
         'action'        => 'get'
     )
@@ -62,7 +64,7 @@ $router->addRoute('statesId', $stateRoute);
 $visitsRoute = new Zend_Controller_Router_Route(
     'api/visits',
     array(
-        'modules'        => 'API',
+        'modules'        => 'api',
         'controller'    => 'visits',
         'action'        => 'index'
     )
@@ -73,7 +75,7 @@ $router->addRoute('visits', $visitsRoute);
 $visitRoute = new Zend_Controller_Router_Route(
     'api/visits/:visitId',
     array(
-        'modules'        => 'API',
+        'modules'        => 'api',
         'controller'    => 'visits',
         'action'        => 'get'
     )

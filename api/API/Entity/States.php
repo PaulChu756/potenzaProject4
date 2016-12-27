@@ -1,6 +1,6 @@
 <?php
 
-namespace States\Entity;
+namespace API\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 /**

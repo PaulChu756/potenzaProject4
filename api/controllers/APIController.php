@@ -21,6 +21,11 @@ class API_APIController extends Ia_Controller_Action_Abstract
         $this->updateForm = new API_Form_API_CreateUpdate;    
         parent::init();
         $this->addFilterWidget('activeInactive','e.active',1);
-    }  
+    }
+
+    public function indexAction()
+    {
+
+    }
     
 }
