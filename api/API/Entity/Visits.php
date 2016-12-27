@@ -24,21 +24,21 @@ class Visits
     /**
      *
      * @var string
-     * @ORM\Column(name="p_id", type="integer", nullable=false)
+     * @ORM\Column(type="integer", nullable=false)
      */
     protected $_p_id;
 
     /**
      *
      * @var string
-     * @ORM\Column(name="s_id", type="integer", nullable=false)
+     * @ORM\Column(type="integer", nullable=false)
      */
     protected $_s_id;
 
     /**
      *
      * @var string
-     * @ORM\Column(name="data_visited", type="string", length=60, nullable=false)
+     * @ORM\Column(type="string", length=60, nullable=false)
      */
     protected $_date_visited;
 

@@ -24,14 +24,14 @@ class States
     /**
      *
      * @var string
-     * @ORM\Column(name="statename", type="string", length=60, nullable=false)
+     * @ORM\Column(type="string", length=60, nullable=false)
      */
     protected $_stateName;
 
     /**
      *
      * @var string
-     * @ORM\Column(name="stateabb", type="string", length=3, nullable=false)
+     * @ORM\Column(type="string", length=3, nullable=false)
      */
     protected $_stateAbb;
 

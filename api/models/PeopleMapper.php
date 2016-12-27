@@ -122,7 +122,7 @@ class API_Model_PeopleMapper
 
     public function fetchAll()
     {
-        $resultSet = $this->getDbTable()->fetchAll();
+        //$resultSet = $this->getDbTable()->fetchAll();
         $entries = array();
         foreach($resultSet as $row)
         {

@@ -73,7 +73,7 @@ class API_Model_StatesMapper
 
     public function fetchAll()
     {
-        $resultSet = $this->getDbTable()->fetchAll();
+        //$resultSet = $this->getDbTable()->fetchAll();
         $entries = array();
         foreach($resultSet as $row)
         {
