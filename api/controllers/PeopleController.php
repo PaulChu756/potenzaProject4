@@ -17,8 +17,18 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
         $peopleRepo = $em->getRepository('API\Entity\People');
         //use function from repo
         $people = $peopleRepo->findAll();
-        //display data
-        echo json_encode ($people);
+        //try to display all objects.
+        foreach($people as $obj)
+        {
+          $resultArray[] = 
+          [
+            'id'         => $obj->id,
+            'firstname'  => $obj->firstname,
+            'lastname'   => $obj->lastname,
+            "food"       => $obj->food
+          ];
+        }
+        echo json_encode($resultArray, JSON_PRETTY_PRINT);
 
 
         //$peopleMapper = new API_Model_PeopleMapper();

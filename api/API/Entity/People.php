@@ -3,11 +3,12 @@
 namespace API\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\EntityRepository;
 /**
  *
  * @ORM\Table(name="People")
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity(repositoryClass="PeopleRepository")
+ * @ORM\Entity(repositoryClass="API\Entity\PeopleRepository")
  * @author Paul Chu <paulchu756@gmail.com>
  */
 class People
@@ -24,21 +25,21 @@ class People
     /**
      *
      * @var string
-     * @ORM\Column(type="string", length=60, nullable=false)
+     * @ORM\Column(name="firstname", type="string", length=60, nullable=false)
      */
     protected $_firstName;
 
     /**
      *
      * @var string
-     * @ORM\Column(type="string", length=60, nullable=false)
+     * @ORM\Column(name="lastname", type="string", length=60, nullable=false)
      */
     protected $_lastName;
 
     /**
      *
      * @var string
-     * @ORM\Column(type="string", length=60, nullable=false)
+     * @ORM\Column(name="food", type="string", length=60, nullable=false)
      */
     protected $_favoriteFood;
 
@@ -84,7 +85,6 @@ class People
     }
     
 
-    /*
     public function __construct(array $options = null)
     {
         if(is_array($options))
@@ -106,7 +106,6 @@ class People
         }
         return $this;
     }
-    */
 
      /**
      *
