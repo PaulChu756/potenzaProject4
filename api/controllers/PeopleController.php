@@ -10,15 +10,15 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
       if($this->getRequest()->isGet())
       {
         //access class
-        $entityManager = new API\Entity\People;
+        $peopleClass = new API\Entity\People;
         //get entityManager
-        $em = $entityManager->getEntityManager();
+        $em = $peopleClass->getEntityManager();
         //get repo
         $peopleRepo = $em->getRepository('API\Entity\People');
         //use function from repo
         $people = $peopleRepo->findAll();
         //display data
-        echo json_encode($people);
+        echo json_encode ($people);
 
 
         //$peopleMapper = new API_Model_PeopleMapper();
@@ -44,6 +44,10 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
                     ->setFavoriteFood($favFood);
           $peopleMapper = new API_Model_PeopleMapper();
           $peopleMapper->save($people);
+      }
+      else
+      {
+        throw new Exception("Error: Get/Post didn't work and something went really wrong", 1);
       }
   }
 
