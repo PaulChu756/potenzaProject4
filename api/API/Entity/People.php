@@ -24,21 +24,21 @@ class People
 
     /**
      *
-     * @var string
+     * @var string $firstname
      * @ORM\Column(name="firstname", type="string", length=60, nullable=false)
      */
     protected $_firstName;
 
     /**
      *
-     * @var string
+     * @var string $lastname
      * @ORM\Column(name="lastname", type="string", length=60, nullable=false)
      */
     protected $_lastName;
 
     /**
      *
-     * @var string
+     * @var string $food
      * @ORM\Column(name="food", type="string", length=60, nullable=false)
      */
     protected $_favoriteFood;

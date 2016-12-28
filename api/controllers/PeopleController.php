@@ -15,8 +15,11 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
         $em = $peopleClass->getEntityManager();
         //get repo
         $peopleRepo = $em->getRepository('API\Entity\People');
+        var_dump($peopleRepo);
         //use function from repo
         $people = $peopleRepo->findAll();
+        var_dump($people);
+
         //try to display all objects.
         foreach($people as $obj)
         {
@@ -29,6 +32,7 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
           ];
         }
         echo json_encode($resultArray, JSON_PRETTY_PRINT);
+        var_dump($resultArray);
 
 
         //$peopleMapper = new API_Model_PeopleMapper();
