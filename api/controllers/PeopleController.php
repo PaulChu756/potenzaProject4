@@ -1,6 +1,6 @@
 <?php
 
-use Doctrine\ORM\EntityManager;
+use Doctrine\ORM;
 use API\Entity;
 
 class API_PeopleController extends Ia_Controller_Action_Abstract
@@ -9,8 +9,18 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
   {
       if($this->getRequest()->isGet())
       {
-        $peopleRepository = $entityManager->getRepository('People');
-        $people = $peopleRepository->findAll();
+        //access class
+        $entityManager = new API\Entity\People;
+        //get entityManager
+        $em = $entityManager->getEntityManager();
+        //get repo
+        $peopleRepo = $em->getRepository('API\Entity\People');
+        //use function from repo
+        $people = $peopleRepo->findAll();
+        //display data
+        echo json_encode($people);
+
+
         //$peopleMapper = new API_Model_PeopleMapper();
         //$this->view->entries = $peopleMapper->fetchAll();
       }
