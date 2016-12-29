@@ -1,23 +1,23 @@
 <?php
 
-// just route API to web application homepage
-$APIRoute = new Zend_Controller_Router_Route(
-    'API',
+// just route api to web application homepage
+$apiRoute = new Zend_Controller_Router_Route(
+    'api',
     array(
-        'modules'       => 'API',
+        'modules'       => 'api',
         'controller'    => 'index',
         'action'        => 'index'
     )
 );
-$router->addRoute('API', $APIRoute);
+$router->addRoute('api', $apiRoute);
 
 
 
 //get all people
 $peopleRoute = new Zend_Controller_Router_Route(
-    'API/people',
+    'api/people',
     array(
-        'modules'       => 'API',
+        'modules'       => 'api',
         'controller'    => 'people',
         'action'        => 'index'
     )
@@ -26,9 +26,9 @@ $router->addRoute('people', $peopleRoute);
 
 //get a person by id
 $personRoute = new Zend_Controller_Router_Route(
-    'API/people/:peopleId',
+    'api/people/:peopleId',
     array(
-        'modules'       => 'API',
+        'modules'       => 'api',
         'controller'    => 'people',
         'action'        => 'get'
     )
@@ -38,9 +38,9 @@ $router->addRoute('peopleId', $personRoute);
 
 //get all states
 $statesRoute = new Zend_Controller_Router_Route(
-    'API/states',
+    'api/states',
     array(
-        'modules'       => 'API',
+        'modules'       => 'api',
         'controller'    => 'states',
         'action'        => 'index'
     )
@@ -49,9 +49,9 @@ $router->addRoute('states', $statesRoute);
 
 //get a states by id
 $stateRoute = new Zend_Controller_Router_Route(
-    'API/states/:stateId',
+    'api/states/:stateId',
     array(
-        'modules'       => 'API',
+        'modules'       => 'api',
         'controller'    => 'states',
         'action'        => 'get'
     )
@@ -61,9 +61,9 @@ $router->addRoute('statesId', $stateRoute);
 
 //get all visits
 $visitsRoute = new Zend_Controller_Router_Route(
-    'API/visits',
+    'api/visits',
     array(
-        'modules'       => 'API',
+        'modules'       => 'api',
         'controller'    => 'visits',
         'action'        => 'index'
     )
@@ -72,9 +72,9 @@ $router->addRoute('visits', $visitsRoute);
 
 //get a visits by id
 $visitRoute = new Zend_Controller_Router_Route(
-    'API/visits/:visitId',
+    'api/visits/:visitId',
     array(
-        'modules'       => 'API',
+        'modules'       => 'api',
         'controller'    => 'visits',
         'action'        => 'get'
     )
