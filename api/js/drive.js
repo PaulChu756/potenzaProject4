@@ -22,7 +22,7 @@ function displayData()
 		var selectedPerson = $("#SelectHumanDropDown").val();
 		$.ajax({
 			type: "GET",
-			url: "api/people/" + selectedPerson,
+			url: "API/people/" + selectedPerson,
 			dataType: "json",
 			success: function(data)
 			{
@@ -66,7 +66,7 @@ function zendPopulatePeople()
 {
 	$.ajax({
 		type:"GET",
-		url:"api/people",
+		url:"API/people",
 		dataType:"json",
 		success : function(data)
 		{
@@ -92,7 +92,7 @@ function zendPopulateStates()
 {
 	$.ajax({
 		type:"GET",
-		url:"api/states",
+		url:"API/states",
 		dataType:"json",
 		success : function(data)
 		{
@@ -109,7 +109,7 @@ function addPerson()
 {
 	$.ajax({
 		type: "POST",
-		url: "api/people",
+		url: "API/people",
 		data: $("#personForm").serialize(),
 		success: function(data)
 		{
@@ -133,7 +133,7 @@ function addVisit()
 {
 	$.ajax({
 		type: "POST",
-		url: "api/visits",
+		url: "API/visits",
 		data: $("#visitForm").serialize(),
 		success: function(data)
 		{

@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\EntityRepository;
 /**
  *
- * @ORM\Table(name="People")
+ * @ORM\Table(name="`People`")
  * @ORM\HasLifecycleCallbacks
  * @ORM\Entity(repositoryClass="API\Entity\PeopleRepository")
  * @author Paul Chu <paulchu756@gmail.com>
@@ -27,7 +27,7 @@ class People
      * @var string $firstname
      * @ORM\Column(name="firstname", type="string", length=60, nullable=false)
      */
-    protected $_firstName;
+    public $_firstName;
 
     /**
      *

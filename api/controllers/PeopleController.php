@@ -10,15 +10,13 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
       if($this->getRequest()->isGet())
       {
         //access class
-        $peopleClass = new API\Entity\People;
+        $peopleClass = new API\Entity\People();
         //get entityManager
         $em = $peopleClass->getEntityManager();
         //get repo
         $peopleRepo = $em->getRepository('API\Entity\People');
-        var_dump($peopleRepo);
         //use function from repo
         $people = $peopleRepo->findAll();
-        var_dump($people);
 
         //try to display all objects.
         foreach($people as $obj)
@@ -31,7 +29,7 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
             "food"       => $obj->food
           ];
         }
-        echo json_encode($resultArray, JSON_PRETTY_PRINT);
+        //echo json_encode($resultArray, JSON_PRETTY_PRINT);
         var_dump($resultArray);
 
 
