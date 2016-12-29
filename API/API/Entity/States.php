@@ -26,7 +26,7 @@ class States
     /**
      *
      * @var string
-     * @ORM\Column(name="stateabb", type="string", length=3, nullable=false)
+     * @ORM\Column(name="stateabb", type="string", length=60, nullable=false)
      */
     protected $_stateAbb;
 
@@ -48,16 +48,6 @@ class States
         return $this->_id;
     }
 
-    public function setStateName($stateName)
-    {
-        $this->_stateName = (string) $stateName;
-        return $this;
-    }
-    public function getStateName()
-    {
-        return $this->_stateName;
-    }
-
     public function getStateAbb($stateAbb)
     {
         $this->_stateAbb = (string) $stateAbb;
@@ -66,5 +56,15 @@ class States
     public function setStateAbb()
     {
         return $this->_stateAbb;
+    }
+
+    public function setStateName($stateName)
+    {
+        $this->_stateName = (string) $stateName;
+        return $this;
+    }
+    public function getStateName()
+    {
+        return $this->_stateName;
     }
 }

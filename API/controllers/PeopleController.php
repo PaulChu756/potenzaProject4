@@ -17,10 +17,10 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
         {
           $resultArray[] = 
           [
-            'id'         => $obj->id,
-            'firstname'  => $obj->firstname,
-            'lastname'   => $obj->lastname,
-            "food"       => $obj->food
+            'id'         => $obj->getId(),
+            'firstname'  => $obj->getFirstName(),
+            'lastname'   => $obj->getLastName(),
+            "food"       => $obj->getFavoriteFood()
           ];
         }
 

@@ -15,12 +15,11 @@ class API_StatesController extends Ia_Controller_Action_Abstract
         {
             $resultArray[] = 
             [
-            'id'            => $obj->id,
-            'stateabb'      => $obj->stateabb,
-            'statename'     => $obj->statename
+            'id'            => $obj->getId(),
+            'stateabb'      => $obj->getStateAbb(),
+            'statename'     => $obj->getStateName()
             ];
         }
-
         echo json_encode($resultArray, JSON_PRETTY_PRINT);
         var_dump($states);
   }

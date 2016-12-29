@@ -1,13 +1,29 @@
 <?php
 
-class API_VisitsController extends Zend_Controller_Action
+use Doctrine\ORM;
+use API\Entity;
+
+class API_VisitsController extends Ia_Controller_Action_Abstract
 {
   public function indexAction()
   {
     if($this->getRequest()->isGet())
     {
-      $visitsMapper = new API_Model_VisitsMapper();
-      $this->view->entries = $visitsMapper->fetchAll();
+        $em = $this->getEntityManager();
+        $visitsRepo = $em->getRepository('API\Entity\Visits');
+        $visits = $visitsRepo->findAll();
+
+        foreach($visits as $obj)
+        {
+          $resultArray[] = 
+          [
+            'id'            => $obj->getId(),
+            'p_id'          => $obj->getP_Id(),
+            's_id'          => $obj->getS_Id(),
+            "date_visited"  => $obj->getDate_Visited()
+          ];
+        }
+        echo json_encode($resultArray, JSON_PRETTY_PRINT);
     }
     else if($this->getRequest()->isPost())
     {
