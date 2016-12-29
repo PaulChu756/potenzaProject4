@@ -1,11 +1,28 @@
 <?php
 
-class API_StatesController extends Zend_Controller_Action
+use Doctrine\ORM;
+use API\Entity;
+
+class API_StatesController extends Ia_Controller_Action_Abstract
 {
-  public function indexAction()
-  {
-      $statesMapper = new API_Model_StatesMapper();
-      $this->view->entries = $statesMapper->fetchAll();
+    public function indexAction()
+    {
+        $em = $this->getEntityManager();
+        $statesRepo = $em->getRepository('API\Entity\States');
+        $states = $statesRepo->findAll();
+
+        foreach($states as $obj)
+        {
+            $resultArray[] = 
+            [
+            'id'            => $obj->id,
+            'stateabb'      => $obj->stateabb,
+            'statename'     => $obj->statename
+            ];
+        }
+
+        echo json_encode($resultArray, JSON_PRETTY_PRINT);
+        var_dump($states);
   }
 
   public function getAction()
