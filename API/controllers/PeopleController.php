@@ -9,15 +9,9 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
   {
       if($this->getRequest()->isGet())
       {
-        $peopleClass = new API\Entity\People();
-        $em = $peopleClass->getEntityManager();
+        $em = $this->getEntityManager();
         $peopleRepo = $em->getRepository('API\Entity\People');
         $people = $peopleRepo->findAll();
-
-        if($people == null)
-        {
-          throw new Exception("Error Processing Request", 1);
-        }
 
         foreach($people as $obj)
         {
