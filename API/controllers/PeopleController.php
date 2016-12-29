@@ -9,16 +9,16 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
   {
       if($this->getRequest()->isGet())
       {
-        //access class
         $peopleClass = new API\Entity\People();
-        //get entityManager
         $em = $peopleClass->getEntityManager();
-        //get repo
         $peopleRepo = $em->getRepository('API\Entity\People');
-        //use function from repo
         $people = $peopleRepo->findAll();
 
-        //try to display all objects.
+        if($people == null)
+        {
+          throw new Exception("Error Processing Request", 1);
+        }
+
         foreach($people as $obj)
         {
           $resultArray[] = 
@@ -29,12 +29,10 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
             "food"       => $obj->food
           ];
         }
-        //echo json_encode($resultArray, JSON_PRETTY_PRINT);
-        var_dump($resultArray);
 
+        echo json_encode($resultArray, JSON_PRETTY_PRINT);
+        var_dump($people);
 
-        //$peopleMapper = new API_Model_PeopleMapper();
-        //$this->view->entries = $peopleMapper->fetchAll();
       }
       else if($this->getRequest()->isPost())
       {

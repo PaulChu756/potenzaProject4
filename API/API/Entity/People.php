@@ -3,10 +3,11 @@
 namespace API\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\EntityRepository;
+//use Doctrine\ORM\EntityRepository;
+
 /**
  *
- * @ORM\Table(name="`People`")
+ * @ORM\Table(name="People")
  * @ORM\HasLifecycleCallbacks
  * @ORM\Entity(repositoryClass="API\Entity\PeopleRepository")
  * @author Paul Chu <paulchu756@gmail.com>
@@ -24,21 +25,21 @@ class People
 
     /**
      *
-     * @var string $firstname
+     * @var string
      * @ORM\Column(name="firstname", type="string", length=60, nullable=false)
      */
-    public $_firstName;
+    protected $_firstName;
 
     /**
      *
-     * @var string $lastname
+     * @var string
      * @ORM\Column(name="lastname", type="string", length=60, nullable=false)
      */
     protected $_lastName;
 
     /**
      *
-     * @var string $food
+     * @var string
      * @ORM\Column(name="food", type="string", length=60, nullable=false)
      */
     protected $_favoriteFood;
