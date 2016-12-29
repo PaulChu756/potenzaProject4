@@ -1,8 +1,3 @@
-##############################
-# Information ArchiTECH LLC  #
-# ***** MODULE ASSETS ****** #
-##############################
-
 Javascript and css files may be autoloaded using the following conventions
 
 js
@@ -27,11 +22,6 @@ Paramaters are:
 module - required
 controller - optional
 filename - required
-
-#############################
-# Information ArchiTECH LLC #
-# *****EXAMPLE MODULE****** #
-#############################
 
 #########$##################################################
 # Use modgen.sh to quickly generate your module structure: #
