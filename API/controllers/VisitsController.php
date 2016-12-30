@@ -24,6 +24,7 @@ class API_VisitsController extends Ia_Controller_Action_Abstract
           ];
         }
         echo json_encode($resultArray, JSON_PRETTY_PRINT);
+        var_dump($visits);
     }
     else if($this->getRequest()->isPost())
     {

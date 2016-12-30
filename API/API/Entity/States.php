@@ -48,12 +48,12 @@ class States
         return $this->_id;
     }
 
-    public function getStateAbb($stateAbb)
-    {
-        $this->_stateAbb = (string) $stateAbb;
-        return $this;
-    }
     public function setStateAbb()
+    {
+       $this->_stateAbb = (string) $stateAbb;
+       return $this;
+    }
+    public function getStateAbb($stateAbb)
     {
         return $this->_stateAbb;
     }
