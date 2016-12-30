@@ -21,7 +21,6 @@ class API_StatesController extends Ia_Controller_Action_Abstract
             ];
         }
         echo json_encode($resultArray, JSON_PRETTY_PRINT);
-        var_dump($states);
   }
 
   public function getAction()

@@ -23,10 +23,7 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
             "food"       => $obj->getFavoriteFood()
           ];
         }
-
         echo json_encode($resultArray, JSON_PRETTY_PRINT);
-        var_dump($people);
-
       }
       else if($this->getRequest()->isPost())
       {
@@ -51,17 +48,28 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
       }
       else
       {
-        throw new Exception("Error: Get/Post didn't work and something went really wrong", 1);
+          throw new Exception("Error: findAll/Post didn't work", 1);
       }
   }
-
+  
   public function getAction()
   {
-      $people = new API_Model_People();
-      $peopleMapper = new API_Model_PeopleMapper();
       $request = $this->getRequest();
       $id = $request->getParam('peopleId');
-      $this->view->entries = $peopleMapper->getPeopleVisits($id);
+
+      $em = $this->getEntityManager();
+      $peopleRepo = $em->getRepository('API\Entity\People')->find($id);
+
+      $resultArray[] = 
+      [
+        'id'         => $peopleRepo->getId(),
+        'firstname'  => $peopleRepo->getFirstName(),
+        'lastname'   => $peopleRepo->getLastName(),
+        "food"       => $peopleRepo->getFavoriteFood()
+      ];
+      
+      echo json_encode($resultArray, JSON_PRETTY_PRINT);
+      var_dump($peopleRepo);
   }
 }
 

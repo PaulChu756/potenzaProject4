@@ -22,7 +22,7 @@ function displayData()
 		var selectedPerson = $("#SelectHumanDropDown").val();
 		$.ajax({
 			type: "GET",
-			url: "API/people/" + selectedPerson,
+			url: "api/people/" + selectedPerson,
 			dataType: "json",
 			success: function(data)
 			{
@@ -66,7 +66,7 @@ function zendPopulatePeople()
 {
 	$.ajax({
 		type:"GET",
-		url:"API/people",
+		url:"/people",
 		dataType:"json",
 		success : function(data)
 		{
@@ -79,10 +79,12 @@ function zendPopulatePeople()
 				$("#humanNameDropDown").append("<option value='" + data[i].id + "'>" + data[i].firstname + "</option>");
 			});
 		},
-		error : function(data)
+		error : function(data, status, xhr)
 		{
-			console.log('failed');
+			console.log('Error: failed populating people');
 			console.log(data);
+			console.log(status);
+			console.log(xhr);
 		}
 	});
 }
@@ -92,7 +94,7 @@ function zendPopulateStates()
 {
 	$.ajax({
 		type:"GET",
-		url:"API/states",
+		url:"api/states",
 		dataType:"json",
 		success : function(data)
 		{
@@ -109,7 +111,7 @@ function addPerson()
 {
 	$.ajax({
 		type: "POST",
-		url: "API/people",
+		url: "api/people",
 		data: $("#personForm").serialize(),
 		success: function(data)
 		{
@@ -133,7 +135,7 @@ function addVisit()
 {
 	$.ajax({
 		type: "POST",
-		url: "API/visits",
+		url: "api/visits",
 		data: $("#visitForm").serialize(),
 		success: function(data)
 		{
