@@ -54,6 +54,7 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
   
   public function getAction()
   {
+      //trying to get the action number and use it in find function
       $request = $this->getRequest();
       $id = $request->getParam('peopleId');
 

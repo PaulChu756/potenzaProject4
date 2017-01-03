@@ -66,7 +66,7 @@ function zendPopulatePeople()
 {
 	$.ajax({
 		type:"GET",
-		url:"/people",
+		url:"api/people",
 		dataType:"json",
 		success : function(data)
 		{
@@ -119,7 +119,7 @@ function addPerson()
 			console.log(data);
 			console.log($("#personForm").serialize());
 			zendPopulatePeople();
-			displayPeopleData();
+			displayData();
 		},
 		error:function(data)
 		{

@@ -30,7 +30,7 @@ $personRoute = new Zend_Controller_Router_Route(
     array(
         'modules'       => 'api',
         'controller'    => 'people',
-        'action'        => 'index'
+        'action'        => 'get'
     )
 );
 $router->addRoute('peopleId', $personRoute);
@@ -54,7 +54,7 @@ $stateRoute = new Zend_Controller_Router_Route(
     array(
         'modules'       => 'api',
         'controller'    => 'states',
-        'action'        => 'index'
+        'action'        => 'get'
     )
 );
 $router->addRoute('statesId', $stateRoute);
@@ -78,7 +78,7 @@ $visitRoute = new Zend_Controller_Router_Route(
     array(
         'modules'       => 'api',
         'controller'    => 'visits',
-        'action'        => 'index'
+        'action'        => 'get'
     )
 );
 $router->addRoute('visitId', $visitRoute);
