@@ -23,7 +23,7 @@ function displayData()
 		$.ajax({
 			type: "GET",
 			url: "api/people/" + selectedPerson,
-			dataType: "json",
+			dataType: "text",
 			success: function(data)
 			{
 				console.log(data);

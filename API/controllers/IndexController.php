@@ -13,8 +13,6 @@ class API_IndexController extends Ia_Controller_Action_Abstract
 
     public function indexAction()
     {
-
+        //var_dump('test');die();
     }
-
-
 }

@@ -1,18 +1,5 @@
 <?php
 
-// just route api to web application homepage
-$apiRoute = new Zend_Controller_Router_Route(
-    'api',
-    array(
-        'modules'       => 'api',
-        'controller'    => 'index',
-        'action'        => 'index'
-    )
-);
-$router->addRoute('api', $apiRoute);
-
-
-
 //get all people
 $peopleRoute = new Zend_Controller_Router_Route(
     'api/people',
