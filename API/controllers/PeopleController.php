@@ -48,6 +48,7 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
 
         elseif($apiVars["people"] != null)
         {
+            echo "here"; die();
             $em = $this->getEntityManager();
             $peopleRepo = $em->getRepository('API\Entity\People')->find($apiVars["people"]);
             var_dump($peopleRepo);
