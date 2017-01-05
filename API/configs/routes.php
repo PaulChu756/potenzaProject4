@@ -13,14 +13,14 @@ $router->addRoute('people', $peopleRoute);
 
 //get a person by id
 $personRoute = new Zend_Controller_Router_Route(
-    'api/people/:peopleId',
+    'api/people/:id',
     array(
         'modules'       => 'api',
         'controller'    => 'people',
         'action'        => 'index'
     )
 );
-$router->addRoute('peopleId', $personRoute);
+$router->addRoute('id', $personRoute);
 
 
 
@@ -37,14 +37,14 @@ $router->addRoute('states', $statesRoute);
 
 //get a states by id
 $stateRoute = new Zend_Controller_Router_Route(
-    'api/states/:stateId',
+    'api/states/:id',
     array(
         'modules'       => 'api',
         'controller'    => 'states',
         'action'        => 'index'
     )
 );
-$router->addRoute('statesId', $stateRoute);
+$router->addRoute('id', $stateRoute);
 
 
 
@@ -61,13 +61,13 @@ $router->addRoute('visits', $visitsRoute);
 
 //get a visits by id
 $visitRoute = new Zend_Controller_Router_Route(
-    'api/visits/:visitId',
+    'api/visits/:id',
     array(
         'modules'       => 'api',
         'controller'    => 'visits',
         'action'        => 'index'
     )
 );
-$router->addRoute('visitId', $visitRoute);
+$router->addRoute('id', $visitRoute);
 
 ?>

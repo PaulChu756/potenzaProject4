@@ -10,7 +10,6 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
       $requestURI = parse_url($_SERVER['REQUEST_URI']);
       $segments = explode('/', $requestURI['path']);
       $apiVars = [];
-
       $i = 2;
       while($i < count($segments))
       {
@@ -48,10 +47,8 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
 
         elseif($apiVars["people"] != null)
         {
-            echo "here"; die();
             $em = $this->getEntityManager();
             $peopleRepo = $em->getRepository('API\Entity\People')->find($apiVars["people"]);
-            var_dump($peopleRepo);
 
             $resultArray[] = 
             [
@@ -62,6 +59,8 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
             ];
             
             echo json_encode($resultArray, JSON_PRETTY_PRINT);
+            var_dump($peopleRepo);
+            var_dump($resultArray);
         }
       }
       else if($this->getRequest()->isPost())
