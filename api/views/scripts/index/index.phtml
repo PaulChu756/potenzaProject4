@@ -3,7 +3,8 @@
 
 <center>
 <div id="welcome">
-    <h1>Welcome to the <span id="zf-name">Zend Framework and Doctrine!</span></h1>
+    <h1>Welcome to the <span id="zf-name">Zend Framework! and Doctrine 2</span></h1>
+
     <h3>This is your project's main</h3>
 </div>
 </center>
@@ -11,12 +12,13 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8"/>
+	<!--Bootstrap CDN method-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   </head>
 
 	<body>
 		<div class = "container">
-			<br><center><img class = "img-responsive" src = "/img/stormtrooper.jpg" alt = "Stormtrooper" width = "200" height="200"></center>
+			<br><center><img class = "img-responsive" src = "img/stormtrooper.jpg" alt = "Stormtrooper" width = "200" height="200"></center>
 			<center><h1>Follow ze steps </h1></center>
 			<p class = "text-center">
 			<br>Step 1: Must initialize init.php, cli php init.php.
@@ -41,9 +43,9 @@
 
 				<div class="modal-body">
 					<form method="post" id="personForm">
-					First Name: 	<input type="text" id="firstName" name="firstName">	<br><br>
-					Last Name: 		<input type="text" id="lastName" name="lastName">	<br><br>
-					Favorite Food: 	<input type="text" id="favoriteFood" name="favoriteFood">	<br><br>
+					First Name: 	<input type="text" id="firstName" name="firstName" required="required">	<br><br>
+					Last Name: 		<input type="text" id="lastName" name="lastName" required="required">	<br><br>
+					Favorite Food: 	<input type="text" id="favoriteFood" name="favoriteFood" required="required">	<br><br>
 					<button type="submit" id="addPersonSubmit" name="addPersonSubmit" class="btn btn-success" data-dismiss="modal">Submit</button>
 					</form>
 				</div>
@@ -65,16 +67,16 @@
 
 				<div class="modal-body">
 					<form method="post" id="visitForm">
-					<select id="humanNameDropDown" name="humanNameDropDown" class="btn btn-primary dropdown-toggle">
+					<select id="humanNameDropDown" name="humanNameDropDown" class="btn btn-primary dropdown-toggle" required="required">
 					<option id="personOptions"> Select a human </option></select>	<br><br><br><br><br><br><br>
 
-					<select id="stateNameDropDown" name="stateNameDropDown" class="btn btn-info dropdown-toggle">
+					<select id="stateNameDropDown" name="stateNameDropDown" class="btn btn-info dropdown-toggle" required="required">
 					<option>Select a State</option> </select>	<br><br><br><br><br><br><br><br><br><br><br>
 
 					Date Visited:<br>
 					Format: YYYY/MM/DD<br>
-					API: 1994/07/14<br>
-					<input type="text" id="dateVisit" name="dateVisit"><br><br>
+					Example: 1994/07/14<br>
+					<input type="text" id="dateVisit" name="dateVisit" required="required"><br><br>
 					<button type="submit" id="addVisitSubmit" name="addVisitSubmit" class="btn btn-success" data-dismiss="modal">Submit</button>
 					</form>
 				</div>
@@ -88,8 +90,7 @@
 	<form>
 		<br><br>Select a human and learn where they're from and favor food <br><br>
 		<div id="PeopleInfo">Selected person info will be here</div>
-    <div id="StatesInfo"> </div>
-    <div id="VisitsInfo"> </div>
+    	<div id="VisitsInfo"> </div>
 		<br><select id="SelectHumanDropDown" name="SelectHumanDropDown" class="btn btn-success dropdown-toggle">
 		<option id="personOptions"> Select a human </option></select>
 	</form>
@@ -97,7 +98,7 @@
 <br><br><br><br><br>
 
 <!--Jquery CDN method-->
-<script src="https://ajax.googleAPIs.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!--BootStrap javascript CDN method>-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <!-- Ajax file -->

@@ -52,7 +52,7 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
         {
             $request = $this->getRequest();
             $getPeopleValues = $request->getPost();
-            $people = new API_Model_People();
+            $people = new API\Entity\People();
 
             $firstName = $getPeopleValues['firstName'];
             $lastName = $getPeopleValues['lastName'];
@@ -66,8 +66,9 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
             $people   ->setFirstName($firstName)
                       ->setLastName($lastName)
                       ->setFavoriteFood($favFood);
-            $peopleMapper = new API_Model_PeopleMapper();
-            $peopleMapper->save($people);
+            $em = $this->getEntityManager();
+            $em        ->persist($people);
+            $em        ->flush();
         }  
       }
       else
