@@ -87,7 +87,12 @@ class API_PeopleController extends Ia_Controller_Action_Abstract
           
           echo json_encode($resultArray, JSON_PRETTY_PRINT);
       }
-  }
+    }
+
+    public function getAction()
+    {
+      echo "testtttttttttttttttt";die();
+    }
 }
 
 ?>

@@ -115,16 +115,18 @@ function addPerson()
 		data: $("#personForm").serialize(),
 		success: function(data)
 		{
-			alert("You have added a person");
+			alert("You have added a persondwasdwds");
 			console.log(data);
 			console.log($("#personForm").serialize());
 			zendPopulatePeople();
 			displayData();
 		},
-		error:function(data)
+		error:function(data, status, xhr)
 		{
 			alert("Please fill out all inputs");
 			console.log(data);
+			console.log(status);
+			console.log(xhr);
 			console.log($("#personForm").serialize());
 		}
 	});

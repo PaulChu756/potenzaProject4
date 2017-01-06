@@ -6,18 +6,18 @@ $peopleRoute = new Zend_Controller_Router_Route(
     array(
         'modules'       => 'api',
         'controller'    => 'people',
-        'action'        => 'index'
+        'action'        => 'get'
     )
 );
 $router->addRoute('people', $peopleRoute);
 
 //get a person by id
 $personRoute = new Zend_Controller_Router_Route(
-    'api/people/:id',
+    'api/people/jjjj',
     array(
         'modules'       => 'api',
         'controller'    => 'people',
-        'action'        => 'index'
+        'action'        => 'get'
     )
 );
 $router->addRoute('id', $personRoute);
